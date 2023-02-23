@@ -9,7 +9,7 @@ pool:
 steps:
 - task: JavaToolInstaller@0
   inputs:
-    versionSpec: '8'
+    versionSpec: '11'
     jdkArchitectureOption: 'x64'
     jdkSourceOption: 'PreInstalled'
 - task: Gradle@2
@@ -23,6 +23,4 @@ steps:
     publishJUnitResults: false
     testResultsFiles: '**/TEST-*.xml'
     tasks: 'build'
-- script: bash <(curl -s https://copilot.blackducksoftware.com/ci/azure/scripts/upload)
- -
-  script: bash <(curl -s https://copilot-test.blackducksoftware.com/ci/azure/scripts/upload)
+- script: bash <(curl -s https://copilot-test.blackducksoftware.com/ci/azure/scripts/upload)
